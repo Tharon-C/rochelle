@@ -1,21 +1,20 @@
-<?php /* Template Name:Home Page */ get_header(); ?>
+<?php /* Template Name:Home Page */ get_header('home'); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
-            <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+	<!-- section -->
+		<div class="content-bkg"></div>
+		
+		<section class="content clear">
+			
+		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 			<!-- article -->
-			<article class="content" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="content-int">
-
+			<article class="content-int  clear" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php the_content(); ?>
 
 				<?php comments_template( '', true ); // Remove if you don't want comments ?>
 
 				<br class="clear">
 
-			</div>
 			</article>
 			<!-- /article -->
 
@@ -36,5 +35,13 @@
 		</section>
 		<!-- /section -->
 	</main>
+	</div>
+		<!-- /wrapper -->
+        
+		<?php wp_footer(); ?>
+	</body>
+</html>
 
-<?php get_footer(); ?>
+
+
+

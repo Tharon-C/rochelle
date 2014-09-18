@@ -1,9 +1,9 @@
 /*
-	Theme Name: Template 1
+	Theme Name: Rochelle Lang
 	Theme URI: 
-	Description: A Dreamy Template Full of Floats
+	Description:A custom Template by TagLine 
 	Author: Tharon Carlson
-	Author URI: http://tharoncarlson.com
+	Author URI: http://taglinegroup.com
 	Tags: Starter, HTML5, CSS3
 
 	License: MIT
@@ -45,7 +45,7 @@ img {display:block;vertical-align:bottom;}
 
 /*helper classes*/
 .flex {width:100%;}
-.inlineblk{display:inline-block;}
+.inline{display:inline-block;}
 .block {display: block;}
 .p-l {float:left;}
 .p-r {float:right;}

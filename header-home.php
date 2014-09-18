@@ -25,38 +25,34 @@
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
-		<div class="wrapper">
-
+		<div class="wrapper clear">
+		
 			<!-- header -->
 			<header class="header clear" role="banner">
-                <div class="business-info section-top clear">
-                    
-                    <div class="page-wrapper">
-                    <?php dynamic_sidebar('widget-area-1'); ?>
-					
-                     </div>
-                    
-                    </div>
-
-
-					<!-- nav -->
-					<nav class="nav int-nav clear" role="navigation">
-    
-                         
-                        <!-- logo -->
+             <!-- logo -->
 				    <div class="logo">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/woodandstone-logo.png" alt="Logo" class="logo-img">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="flex logo-img">
 						</a>
                     </div>
 					<!-- /logo -->
+
+					<!-- nav -->
+					<nav class="nav clear" role="navigation">
+    
+                        <div class="clear">    
+                  
                            
                             <?php  add_custom_nav_menu('menu-1'); ?>
-                
+                 </div>
 					</nav>
+					<div class="cart clear">  
+                  <?php dynamic_sidebar('side-nav-t'); ?>                             
+                </div>
+					        <?php dynamic_sidebar('side-nav-b'); ?>
 					<!-- /nav -->
-                
-              <?php echo do_shortcode('[layerslider id="2"]'); ?> 
-</header>
+      		<?php get_footer(); ?>
+      		
+      		</header>
 			<!-- /header -->

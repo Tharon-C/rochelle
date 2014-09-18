@@ -12,8 +12,20 @@
 // Load any external files you have here
 
 /*------------------------------------*\
-	Theme Support
+	Woocommerce
 \*------------------------------------*/
+// Display 24 products per page. Goes in functions.php
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
+/*------------------------------------*\
+    Theme Support
+\*------------------------------------*/
+
+
+
+
+
+
+
 
 // remove aout p tags
 remove_filter( 'the_content', 'wpautop' );
@@ -41,11 +53,14 @@ add_shortcode('page_path', function($args) {
 function load_fonts() {
             wp_register_style('open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,700');
             wp_enqueue_style( 'open-sans');
+
+            wp_register_style('lato', 'http://fonts.googleapis.com/css?family=Lato:100,400,700,900,100italic,300italic,400italic,700italic,900italic');
+            wp_enqueue_style( 'lato');
       
-    wp_register_style('quicksand', 'http://fonts.googleapis.com/css?family=Quicksand:400,700');
-            wp_enqueue_style( 'quicksand');
+            wp_register_style('poiret-one', 'http://fonts.googleapis.com/css?family=Poiret+One');
+            wp_enqueue_style( 'poiret-one');
     
-     wp_register_style('font-awsome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+            wp_register_style('font-awsome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
             wp_enqueue_style( 'font-awsome');
         }
 
@@ -142,13 +157,6 @@ function html5blank_header_scripts()
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
-        
-        wp_register_script('benefits-js', get_template_directory_uri() . '/js/benefits.js', array('jquery')); 
-        wp_enqueue_script('benefits-js'); // Enqueue it!
-    
-    
-      wp_register_script('learning-js', get_template_directory_uri() . '/js/learning.js', array('jquery')); 
-        wp_enqueue_script('learning-js'); // Enqueue it!
     }
 }
 
@@ -170,12 +178,8 @@ function html5blank_styles()
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 
-
     wp_register_style('master', get_template_directory_uri() . '/css/master.css', array(), '1.0', 'all');
     wp_enqueue_style('master'); // Enqueue it!
-
-    wp_register_style('hack', get_template_directory_uri() . '/css/hack.css', array(), '1.0', 'all');
-    wp_enqueue_style('hack'); // Enqueue it!
 
 }
 
@@ -230,23 +234,12 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Top Left
     register_sidebar(array(
-        'name' => __('Side Nav Top', 'Area for business info etc'),
+        'name' => __('Side Nav', 'Area under navigation'),
         'description' => __('Area for business info etc', 'html5blank'),
         'id' => 'side-nav-t',
-        'before_widget' => '<div id="%1$s" class="%2$s top-wdgt-l">',
+        'before_widget' => '<div id="%1$s" class="%2$s nav-wdgt">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="title-2">',
-        'after_title' => '</h3>'
-    ));
-
-    // Define Sidebar Top Right
-    register_sidebar(array(
-        'name' => __('Side Nav bottom', 'Area for business info etc'),
-        'description' => __('Area for business info etc', 'html5blank'),
-        'id' => 'side-nav-b',
-        'before_widget' => '<div id="%1$s" class="%2$s top-wdgt-r">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3>',
         'after_title' => '</h3>'
     ));
 
@@ -266,12 +259,21 @@ if (function_exists('register_sidebar'))
         'name' => __('Footer 1', 'Area for footer items, links, site map, logo etc'),
         'description' => __('Area for footer items, links, site map, logo etc', 'html5blank'),
         'id' => 'footer-1',
-        'before_widget' => '<div id="%1$s" class="%2$s footer-wdgt-1">',
+        'before_widget' => '<div id="%1$s" class="%2$s footer-wdgt">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
     ));
 
+       register_sidebar(array(
+        'name' => __('Analytics', 'Add Google Analyitics Here'),
+        'description' => __('Add Google Analyitics. Use a text widget with no title', 'html5blank'),
+        'id' => 'analyitics',
+        'before_widget' => '<div id="%1$s" class="%2$s footer-wdgt-1">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
 
 }
 

@@ -1,7 +1,20 @@
 var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
-    refresh = require('gulp-livereload');
+    refresh = require('gulp-livereload'),
+    imagemin = require('gulp-imagemin'),
+    pngcrush = require('imagemin-pngcrush');
+
+
+gulp.task('img-min', function () {
+    return gulp.src('./img/src/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngcrush()]
+        }))
+        .pipe(gulp.dest('./img/'));
+});
 
 gulp.task('style', function() {
     return gulp.src('./sass/*.scss')
