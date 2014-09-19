@@ -24,7 +24,7 @@ $color-4:#F79421;
 $color-5:#EC1F27;
 $color-6:#2DAB36;
 $shadow-1:0 1px 2px rgba(0, 0, 0, 0.21);
-$shadow-2:0 3px 4px rgba(0, 0, 0, 0.41);
+$shadow-2:1px 1px 7px rgba(0, 0, 0, 0.41);
 
 p {margin:0 0 20px;}
 
@@ -41,6 +41,10 @@ html {
 }
 
 .page-title {
+  width:80%;
+  margin-left:22%;
+  z-index: 2;
+  position:relative;
   line-height: 1.6em;
   padding:15px 0 0 50px;
   display:block;
@@ -535,6 +539,13 @@ input[type='button'], input[type='submit'], button, .button {
   padding:10px;
   background:$grey-3;
   box-shadow:$shadow-1;
+}
+
+.img-rnd-1 {
+  box-shadow:$shadow-2;
+  border:solid 10px $grey-3;
+  border-radius:1000px;
+  background:$grey-4;
 }
 
 

@@ -3,11 +3,11 @@
 	<main role="main">
 		<!-- section -->
 		<div class="content-bkg"></div>
-		
-		<section class="content clear">
-			<section class="page-title color-1 txt-wht">
+		<section class="page-title color-1 txt-wht">
 		<?php the_title(); ?>
 	</section>
+		<section class="content clear">
+			
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 			<!-- article -->

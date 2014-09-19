@@ -28,9 +28,9 @@
 		<div class="wrapper clear">
 			<!-- color behind header -->
 
-			<!--
+		
 			<div class="header-bkg color-1"></div>
-			-->
+		
 
 			<!-- /color behind header -->
 			<!-- header -->
