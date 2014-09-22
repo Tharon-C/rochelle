@@ -41,7 +41,7 @@ html {
 }
 
 .page-title {
-  width:76%;
+  width:78%;
   margin-left:22%;
   z-index: 2;
   position:relative;
@@ -60,8 +60,7 @@ html {
   bottom:0;
   margin-left:22%;
   float:left;
-  width: 76%;
-  max-width:1100px;
+  width: 78%;
   padding:100px 50px ;
   background:white;
    @media (max-width: 850px) {
@@ -77,7 +76,7 @@ html {
   position:relative;
   z-index: 200;
   margin-left:22%;
-  width: 76%;
+  width: 78%;
   max-width:1100px;
   color:$grey-5;
   font-family:$font-3;
@@ -106,13 +105,18 @@ display:none;
 }
 
 .home .content {
+  width:100%;
  max-width:1300px;
 }
+
+.test .content, .gallery .content, .gallery .content-bkg {
+max-width:100%;
+} 
+
 
 .post-type-archive-product .page-title {
   display: none;
 }
-
 
 
 
@@ -548,10 +552,78 @@ input[type='button'], input[type='submit'], button, .button {
   background:$grey-4;
 }
 
+/* =========================================================================
+  Gallery
+   ========================================================================= */
+.item {
+  padding:10px;
+  width:33.333%;
+  .title-3 {
+    background:$grey-5;
+    font-family: $font-3;
+    color:white;
+    text-align: center;
+    font-weight: 400;
+  }
+  &:hover .gallery-hover{
+  opacity:1;
+  transition: opacity .5s ease;
+  
+}
+  .link-group {
+    width:250px;
+    margin:auto;
+  }
+  a {
+    text-align: center;
+    color:white;
+    width:50%;
+    float:left;
+  }
+  .icon {
+    width:70px;
+    margin:auto;
+  }
+  .gallery-hover {
+    padding-top:50px;
+    position:absolute;
+    top:10px;
+    bottom:45px;
+    left:10px;
+    right:10px;
+    background:rgba(116, 62, 98, 0.84);
+    font-size:16px;
+    color:white;
+    opacity:0;
+  }
+}
 
 /* =========================================================================
    Plugin Hacks
    ========================================================================= */
 .fwb_fromthis  {
 display:none;
+}
+
+.wmle_post_meta {
+display:none;
+}
+
+.wmle_post_excerpt {
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index: 500;
+  top:0;
+  bottom:0;
+  background:black;
+  display:none;
+}
+
+.wpme_image:hover .wmle_post_excerpt {
+  display:block;
+}
+
+.nivo-lightbox-image img {
+  margin:auto;
 }

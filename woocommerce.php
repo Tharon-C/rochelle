@@ -3,11 +3,11 @@
 	<main role="main">
 		<!-- section -->
 		<div class="content-bkg"></div>
-		
-		<section class="content clear">
-			<section class="page-title color-1 txt-wht">
+		<section class="page-title color-1 txt-wht">
 		<?php the_title(); ?>
 	</section>
+		<section class="content clear">
+			
 	<article class="content-int  clear" >
 		<?php woocommerce_content(); ?>
 				<br class="clear">
