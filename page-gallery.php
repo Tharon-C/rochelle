@@ -40,6 +40,18 @@
 		<!-- /section -->
 	</main>
 	</div>
+	<script>
+imagesLoaded( document.querySelector('#container'), function( instance ) {
+  // console.log('all images are loaded');
+jQuery(function ($) {
+var $container = $('#container');
+// initialize
+$container.masonry({
+  itemSelector: '.item'
+});
+});
+});
+</script>
 		<!-- /wrapper -->
         
 		<?php wp_footer(); ?>
