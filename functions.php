@@ -16,6 +16,25 @@
 \*------------------------------------*/
 // Display 24 products per page. Goes in functions.php
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
+
+// reorder elements on products page 
+//moving short desc to top
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 1 );
+
+//Removing Title
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+
+ 
+add_filter( 'woocommerce_product_tabs', 'sb_woo_remove_reviews_tab', 98);
+function sb_woo_remove_reviews_tab($tabs) {
+
+ unset($tabs['reviews']);
+
+ return $tabs;
+}
+
+
 /*------------------------------------*\
     Theme Support
 \*------------------------------------*/

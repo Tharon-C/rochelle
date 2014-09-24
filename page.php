@@ -2,6 +2,7 @@
 
 	<main role="main">
 		<!-- section -->
+		<div class="page-title-bkg"></div>
 		<div class="content-bkg"></div>
 		<section class="page-title color-1 txt-wht">
 		<?php the_title(); ?>

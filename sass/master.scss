@@ -19,7 +19,7 @@ $grey-5:#828282;
 $grey-6:#424242;
 $color-1:#4A8294;
 $color-2:#0872BA;
-$color-3:#C2178D;
+$color-3:#875E7D;
 $color-4:#F79421;
 $color-5:#EC1F27;
 $color-6:#2DAB36;
@@ -33,16 +33,25 @@ ul, ol { padding-left:10px;}
 html {
   color:white;
   position:relative;
-  background:url('../img/slide-6.jpg') center center fixed no-repeat;
+  //background:url('../img/slide-6.jpg') center center fixed no-repeat;
   background-size:cover;
   @media (max-width: 750px) {
     background :white;
   }
 }
 
+.page-title-bkg {
+  background:$color-1; 
+  width:100%;
+  height:90px;
+  position:absolute;
+  top:0;
+}
+
 .page-title {
   width:78%;
-  margin-left:22%;
+  height:90px;
+  margin-left:270px;
   z-index: 2;
   position:relative;
   line-height: 1.6em;
@@ -51,6 +60,16 @@ html {
   font-family:$font-2;
   font-weight: 400;
   font-size:48px;
+   @media (max-width: 1270px) {
+    margin-left:22%;
+  }
+  @media (max-width: 850px) {
+    margin-left:150px;
+  }
+   @media (max-width: 750px) {
+width:100%;
+margin:0;
+  }
 }
 
 .content-bkg {
@@ -58,11 +77,15 @@ html {
   position:fixed;
   top:0;
   bottom:0;
-  margin-left:22%;
+  margin-left:270px;
   float:left;
   width: 78%;
   padding:100px 50px ;
   background:white;
+   @media (max-width: 1270px) {
+    margin-left:22%;
+    width: 78%;
+  }
    @media (max-width: 850px) {
     margin-left:150px;
     width:83%;
@@ -75,7 +98,7 @@ html {
 .content {
   position:relative;
   z-index: 200;
-  margin-left:22%;
+  margin-left:270px;
   width: 78%;
   max-width:1100px;
   color:$grey-5;
@@ -83,6 +106,10 @@ html {
   line-height: 1.4em;
   font-size:14px;
   letter-spacing: .1em;
+  @media (max-width: 1270px) {
+    margin-left:22%;
+    width: 78%;
+  }
   @media (max-width: 850px) {
     margin-left:150px;
     width:650px;
@@ -105,7 +132,6 @@ display:none;
 }
 
 .home .content {
-  width:100%;
  max-width:1300px;
 }
 
@@ -131,23 +157,30 @@ header
   position:fixed;
   top:0;
   bottom:0;
+   @media (max-width: 750px) {
+display:none;
+  }
 }
 
 .header {
   min-height:   500px;
-  margin-left:2%;
+  margin-left:20px;
   z-index:10;
   width:20%;
   min-width:150px;
+  max-width: 250px;
   background:rgba(255, 255, 255, 0.83);
   position:fixed;
   top:0;
   bottom:0;
+   @media (max-width: 1270px) {
+    margin-left:2%;
+  }
   @media (max-width: 850px) {
     margin-left:0;
     width:150px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
 display:none;
   }
 }
@@ -453,7 +486,7 @@ footer {
   margin-top: -1.5em;
 }
 
-input, textarea {
+select, input, textarea {
   /* Use for styling text based form elements, like name, email, password. 
   Button/submit specific styles below, those will override */
   display: block;
@@ -557,7 +590,7 @@ input[type='button'], input[type='submit'], button, .button {
    ========================================================================= */
 .item {
   padding:10px;
-  width:33.333%;
+ 
   .title-3 {
     background:$grey-5;
     font-family: $font-3;
@@ -627,3 +660,61 @@ display:none;
 .nivo-lightbox-image img {
   margin:auto;
 }
+
+//woocommerce
+.entry-summary div:nth-of-type(1) {
+  background:$color-3;
+ line-height:3em;
+ padding-left:20px;
+ color:white;
+}
+.single_variation, .single_variation_wrap {
+  background:white !important;
+  padding-left:0 !important;
+}
+
+.entry-summary form {
+  border:solid 1px $grey-5;
+  border-radius:20px;
+  padding:20px;
+  padding-bottom:50px;
+  background: url(../img/payment-meth.png) no-repeat bottom right;
+  select {
+    line-height:1em;
+    padding-left:20px;
+    color:white;
+    -webkit-appearance: none;
+    background: url(../img/new_arrow.png) no-repeat right $color-3 ;
+  }
+  .amount {
+    font-size: 40px;
+  }
+}
+
+.woocommerce #content .quantity input.qty, .woocommerce .quantity input.qty, .woocommerce-page #content .quantity input.qty, .woocommerce-page .quantity input.qty {
+width: 40px;
+border: 1px solid #c8bfc6;
+border-right: 1px solid #c8bfc6;
+}
+
+.woocommerce #content .quantity .plus, .woocommerce .quantity .plus, .woocommerce-page #content .quantity .plus, .woocommerce-page .quantity .plus {
+display: none;
+}
+
+.woocommerce #content .quantity .minus, .woocommerce .quantity .minus, .woocommerce-page #content .quantity .minus, .woocommerce-page .quantity .minus {
+display: none;
+}
+
+
+
+
+
+
+.woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce-page .cart .button, .woocommerce-page .cart input.button {
+float: none;
+margin-bottom: 10px;
+}
+
+ .woocommerce-message:before {
+  height:2.5em !important;
+ }
