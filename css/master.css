@@ -583,6 +583,10 @@ input[type='button'], input[type='submit'], button, .button {
 .woocommerce #content .quantity .minus, .woocommerce .quantity .minus, .woocommerce-page #content .quantity .minus, .woocommerce-page .quantity .minus {
   display: none; }
 
+.entry-content h2 {
+  font-size: 20px;
+  margin-bottom: 10px; }
+
 .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce-page .cart .button, .woocommerce-page .cart input.button {
   float: none;
   margin-bottom: 10px; }
