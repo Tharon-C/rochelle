@@ -1,10 +1,10 @@
 @mixin btnHover($baseColor) {
-    background-color: $baseColor;
+    background: $baseColor;
     &:hover {
-          background-color: darken($baseColor, 10);
+          background: darken($baseColor, 2);
             }
     &:active, &:focus {
-      background-color:$baseColor;
+      background:$baseColor;
     }
           }
 
@@ -30,13 +30,26 @@ p {margin:0 0 20px;}
 
 ul, ol { padding-left:10px;}
 
+.home {
+  background:url('../img/slide-7.jpg') center center fixed no-repeat;
+  background-size:cover;
+}
+
+#fwbslider {
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
 html {
   color:white;
   position:relative;
-  //background:url('../img/slide-6.jpg') center center fixed no-repeat;
-  background-size:cover;
+}
+
+.mobile-show {
+  display:none;
   @media (max-width: 750px) {
-    background :white;
+    display: block;
   }
 }
 
@@ -67,8 +80,9 @@ html {
     margin-left:150px;
   }
    @media (max-width: 750px) {
-width:100%;
-margin:0;
+    padding:15px 0 0 10px;
+    width:100%;
+    margin:0;
   }
 }
 
@@ -100,7 +114,6 @@ margin:0;
   z-index: 200;
   margin-left:270px;
   width: 78%;
-  max-width:1100px;
   color:$grey-5;
   font-family:$font-3;
   line-height: 1.4em;
@@ -123,7 +136,7 @@ margin:0;
 
 .content-int {
   width:100%;
-  position:absolute;
+  position:relative;
    padding:50px 50px ;
 }
 
@@ -131,8 +144,17 @@ margin:0;
 display:none;
 }
 
-.home .content {
- max-width:1300px;
+
+
+.home-content {
+  margin:auto;
+  float:right;
+   @media (max-width: 750px) {
+    float:none;
+    margin:auto;
+  }
+
+
 }
 
 .test .content, .gallery .content, .gallery .content-bkg {
@@ -184,6 +206,8 @@ display:none;
 display:none;
   }
 }
+
+
 
 
 /* ==============================================================
@@ -278,6 +302,11 @@ banner
 footer 
 ================================================================*/
 
+.header footer {
+  position:absolute;
+  bottom:10px;
+}
+
 footer {
   font-family: $font-3;
   font-size: 10px;
@@ -285,8 +314,7 @@ footer {
    color: $grey-5;
   text-align:center;
   width:100%;
-  position:absolute;
-  bottom:10px;
+  
     
   a {
     color: $grey-5;
@@ -328,7 +356,7 @@ footer {
   box-shadow:$shadow-2;
   box-shadow:inset $shadow-2, $shadow-2;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-  @media (max-width: 850px) {
+  /*@media (max-width: 850px) {
   width:inherit;
   margin:0 5px;
   color:$grey-6;
@@ -340,7 +368,7 @@ footer {
   height: 20px;
   border:none;
   border-radius:none;
-  }
+  }*/
     &:before {
       top:14px;
       left:14px;
@@ -391,11 +419,8 @@ footer {
    background:#3399CC;
 }
 
-@media (max-width: 850px) {
-.facebook, .pinterest, .linkedin {
-  background: none;
-}
-}
+
+
 
 
 /* ==========================================================================
@@ -474,7 +499,11 @@ footer {
   display:block;
   font-family:$font-2;
   font-weight: 700;
-  font-size:53px;
+  font-size:110px;
+  margin-bottom: 10px;
+  @media (max-width: 750px) {
+    font-size:50px
+  }
 }
 .sub-headline-1 {
   letter-spacing: .3em;
@@ -482,8 +511,11 @@ footer {
   display:block;
   font-family:$font-2;
   font-weight: 600;
-  font-size:24px;
+  font-size: 38px;
   margin-bottom:10px;
+  @media (max-width: 750px) {
+    font-size:24px;
+  }
 }
 
 .title-1 {
@@ -565,26 +597,70 @@ input[type='button'], input[type='submit'], button, .button {
 
 .form-btn-1 {
    color: $grey-1;
-  background: $color-2 !important;
+  background: $color-1 !important;
 }
 
 .btn-1 {
   color: $grey-1;
-  @include btnHover($color-2);
+  background:$color-1;
+  &:hover {
+    color:$grey-1;
+  }
 }
 
 
 
 .btn-2 {
-   color: $grey-1;
-  @include btnHover($color-4);
+color: $grey-1;
+border-radius: 6px;
+background: rgba(70, 118, 155, 0.4);
+
+  &:hover {
+    color:$grey-2;
+  }
 }
+
 
 .btn-3 {
   font-size: .875em;
  @include btnHover($grey-4);
 }
 
+.cart-link {
+  position:relative;
+  margin:5px 75px 0 0;
+font-size: 20px;
+background: rgba(195, 255, 235, 0.55);;
+border-radius: 800px;
+line-height: 1.2em;
+padding: 7px;
+  &:hover {
+    color:$grey-1;
+  }
+  &:before {
+      top:20px;
+      left:20px;
+      z-index: -1;
+      transition: all .3s ease;
+      border-radius:900px;
+      height:0;
+      width:0;
+      content:"";
+      position:absolute;
+    }
+   
+  &:hover:before {
+      top: -6.9px;
+      left: -7px;
+      border: solid 8px rgba(211, 211, 211, 0.4);
+      height: 51px;
+      width: 51px;
+      }
+@media (max-width: 750px) {
+display:none;
+  }
+
+}
 
 /* ==========================================================================
    =ADJECTIVES
@@ -698,10 +774,15 @@ display:none;
   margin:auto;
 }
 
+#click-menu .threeLines {
+margin: 10px auto !important;
+}
+
 //woocommerce
 .entry-summary div:nth-of-type(1) {
+font-size:18px;
   background:$color-3;
- line-height:3em;
+ line-height:2em;
  padding-left:20px;
  color:white;
 }
@@ -718,7 +799,7 @@ display:none;
   background: url(../img/payment-meth.png) no-repeat bottom right;
   select {
     line-height:1em;
-    padding-left:20px;
+    padding-left:5px;
     color:white;
     -webkit-appearance: none;
     background: url(../img/new_arrow.png) no-repeat right $color-3 ;
@@ -730,6 +811,7 @@ display:none;
 
 .woocommerce #content .quantity input.qty, .woocommerce .quantity input.qty, .woocommerce-page #content .quantity input.qty, .woocommerce-page .quantity input.qty {
 width: 40px;
+height:33px;
 border: 1px solid #c8bfc6;
 border-right: 1px solid #c8bfc6;
 }

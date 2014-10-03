@@ -6,6 +6,7 @@
 		<div class="content-bkg"></div>
 		<section class="page-title color-1 txt-wht">
 		<?php the_title(); ?>
+		<a href="<?php echo do_shortcode('[page_path id="302"]'); ?>" class="cart-link p-r txt-wht"><i class="fa fa-shopping-cart"></i></a>
 	</section>
 		<section class="content clear">
 			
@@ -54,10 +55,24 @@ $container.masonry({
 });
 </script>
 		<!-- /wrapper -->
+<div class="mobile-show">
+	 <footer class="footer-2">  
+    <div class="footer-items footer-1">
+                <div class=" clear">
+                   
+					<?php dynamic_sidebar('footer-1'); ?>
+				</div>
+			</div>    
+          <p class="copyright">
+					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?><br>
+                All Rights Reserved. <br>
+                <a href="http://taglinegroup.com" target="_blank" class="border-t-1 pad-s-20px marg-t-10px block col-3-4 p-c">Design by Tagline.</a>
+				</p>  
+			</footer>
+	</div>
         
 		<?php wp_footer(); ?>
 	</body>
 </html>
-
 
 
