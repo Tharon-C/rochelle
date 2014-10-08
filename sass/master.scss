@@ -21,7 +21,7 @@ $color-1:#4A8294;
 $color-2:#0872BA;
 $color-3:#875E7D;
 $color-4:#F79421;
-$color-5:#EC1F27;
+$color-5:#AE0A0F;
 $color-6:#2DAB36;
 $shadow-1:0 1px 2px rgba(0, 0, 0, 0.21);
 $shadow-2:1px 1px 7px rgba(0, 0, 0, 0.41);
@@ -837,3 +837,8 @@ margin-bottom: 10px;
  .woocommerce-message:before {
   height:2.5em !important;
  }
+
+.payment_method_elavon_vm img {
+    float: left;
+    margin-right: 10px !important;
+}

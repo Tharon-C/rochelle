@@ -394,7 +394,7 @@ footer a {
   background: #f79421;
 }
 .color-5 {
-  background: #ec1f27;
+  background: #ae0a0f;
 }
 .color-6 {
   background: #2dab36;
@@ -412,7 +412,7 @@ footer a {
   color: #f79421;
 }
 .txt-color-5 {
-  color: #ec1f27;
+  color: #ae0a0f;
 }
 .txt-color-6 {
   color: #2dab36;
@@ -742,4 +742,8 @@ input[type='button'], input[type='submit'], button, .button {
 }
 .woocommerce-message:before {
   height: 2.5em !important;
+}
+.payment_method_elavon_vm img {
+  float: left;
+  margin-right: 10px !important;
 }
